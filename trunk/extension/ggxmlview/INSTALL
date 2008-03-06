@@ -1,0 +1,30 @@
+XML View extension for eZ publish INSTALL
+
+Requirements
+============
+See the README files
+
+
+Getting eZ publish
+==================
+
+
+Installing the XML View extension for eZ publish extension
+==========================================================
+1. Download the package.
+2. Copy the downloaded package into the 'extension' directory of your
+   eZ publish installation.
+3. Unpack the files in the distribution.
+4. Enable the extension in eZ publish.
+
+
+Testing that it works
+=====================
+Point your browser to http://ezpublish.install/index.php/layout/set/xml/content/view/xml/2
+or http://ezpublish.install/index.php/layout/set/json/content/view/json/2
+or http://ezpublish.install/index.php/xml/xsd
+(please not that the first 2 of these will take quite a long time to generate)
+
+
+Troubleshooting
+===============

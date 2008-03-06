@@ -1,0 +1,10 @@
+- decide if xsd file has public access or needs a function access to be displayed
+- build up std node template with at least all obj attributes and children (OK), plus create std template for all datatypes
+- create xsd templates to be generated on class view (OK), finish definition of all datatypes
+- create "xml" module that does the same as pagelayout but with better paths, eg index.php/xml/contentalias instead of layout/set/xml/content/view/xml/contentalias
+- finish tpl operators to do xml washing (charset conversion?)
+- fix std debug class to handle echoing inside an xml comment instead of html or popup => to be done via kernel patching. Right now nothing guarantees that invalid xml is emitted and breaks the comment tags
+- find a way to have ez errors still routed in an xml page => creating an xml module + using setErrorModule inside (???) / propose it as an alternative in pagelayout module?
+- add hooks for xslt transform
+- ...
+- profit!
