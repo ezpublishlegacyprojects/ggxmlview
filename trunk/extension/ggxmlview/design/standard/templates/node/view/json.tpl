@@ -8,25 +8,11 @@
  *}
 {ldelim}
 
-  "node_id":"{$node.node_id}",
-  "parent_node_id":"{$node.parent_node_id}",
-  "depth:":"{$node.depth}",
-  "object":{ldelim}
-
-    "id":"{$node.contentobject_id}",
-    "name":"{$node.object.name|wash('javascript')}",
-    "class_name":"{$node.object.class_name|wash('javascript')}",
-    "current_version":"{$node.object.current_version}",
-    "main_node_id":"{$node.object.main_node_id}",
-    "data_map":{ldelim}
-{foreach $node.object.data_map as $name => $item}
-
-      "{$name}":{attribute_view_gui view = json attribute = $item}{delimiter},{/delimiter}
-{/foreach}
-
-    {rdelim}
-
-  {rdelim}
+  "node_id":{$node.node_id},
+  "parent_node_id":{$node.parent_node_id},
+  "main_node_id":{$node.main_node_id},
+  "depth:":{$node.depth},
+  "object":
 
   "children":[
 {* @todo verify if using $node.children has same sort order, creates same compiled code *}

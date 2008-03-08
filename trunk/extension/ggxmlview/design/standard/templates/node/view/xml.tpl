@@ -10,15 +10,10 @@
 
   xmlns="{'/xml'|ezurl('no', 'full')}"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="{'/xml/xsd'|ezurl('no', 'full')} {'/xml/xsd'|ezurl('no', 'full')}"
- {/if} node_id="{$node.node_id}" parent_node_id="{$node.parent_node_id}" depth="{$node.depth}">
-  <object id="{$node.contentobject_id}" name="{$node.object.name|washxml}" current_version="{$node.contentobject_version}" main_node_id="{$node.object.main_node_id}">
-    <{$node.object.class_name|washxml}>
-{foreach $node.object.data_map as $item}
-{attribute_view_gui view = xml attribute = $item}
-{/foreach}
-    </{$node.object.class_name|washxml}>
-  </object>
+  xsi:schemaLocation="{'/xml/xsd'|ezurl('no', 'full')}
+    {'/xml/xsd'|ezurl('no', 'full')}"
+ {/if} node_id="{$node.node_id}" parent_node_id="{$node.parent_node_id}" main_node_id="{$node.main_node_id}" depth="{$node.depth}">
+{content_view_gui view=xml content_object=$node.object}
   <children>
 {* @todo verify if using $node.children has same sort order, creates same compiled code *}
 {let children = fetch( 'content', 'list', hash( parent_node_id, $node.node_id, sort_by, $node.sort_array ) )}
