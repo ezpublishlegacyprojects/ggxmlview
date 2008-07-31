@@ -20,7 +20,8 @@ Installing the "XML View extension for eZ publish" extension
    default to anonmyous access because of security concerns. To display it
    correctly you need to be logged in or give it access to the anonymous user
    (in the admin interface, "roles and permissions" tab)
-
+6. By default the xml and json views are not cached, which could mean unacceptable performance.
+   To enable view cache, uncomment the appropriate line in extension/ggxmlview/settings/site.ini.append.php
 
 Testing that it works
 =====================

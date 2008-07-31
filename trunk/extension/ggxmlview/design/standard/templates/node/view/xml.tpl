@@ -1,5 +1,5 @@
 {*
- * @version $Id: $
+ * @version $Id$
  * @author Gaetano Giunta
  * @copyright (c) 2008 G. Giunta
  * @license code licensed under the GPL License: see README
@@ -13,13 +13,13 @@
   xsi:schemaLocation="{'/xml/xsd'|ezurl('no', 'full')}
     {'/xml/xsd'|ezurl('no', 'full')}"
  {/if} node_id="{$node.node_id}" parent_node_id="{$node.parent_node_id}" main_node_id="{$node.main_node_id}" depth="{$node.depth}">
-{content_view_gui view=xml content_object=$node.object}
+{content_view_gui view = xml content_object = $node.object}
   <children>
 {* @todo verify if using $node.children has same sort order, creates same compiled code *}
 {let children = fetch( 'content', 'list', hash( parent_node_id, $node.node_id, sort_by, $node.sort_array ) )}
 {foreach $children as $item}
 {* NB: full recursive view of all child nodes *}
-{node_view_gui view = xml content_node = $item nonamespace = true}
+{node_view_gui view = xml content_node = $item nonamespace=true}
 {/foreach}
   </children>
 </node>

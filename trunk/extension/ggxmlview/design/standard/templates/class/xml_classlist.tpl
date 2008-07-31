@@ -21,8 +21,8 @@
 <xsd:complexType name="eZPobject">
   <xsd:sequence>
     <!-- data_map is to be defined according to class_name below, or at least depending
-	upon classes present in this ezP installation. We should use xsd 2.0 for the
-	former, and some namespaced definition and "any" type for the second.
+    upon classes present in this ezP installation. We should use xsd 2.0 for the
+    former, and some namespaced definition and "any" type for the second.
     Instead we renamed data_map with the name of the class to geta  deterministic data model,
     and removed class_name attribute -->
     <!--<xsd:element name="data_map">
