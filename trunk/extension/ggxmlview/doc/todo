@@ -1,3 +1,4 @@
+- add a apcakage with a couple of objects that contain all existing datatypes, one empty and one full, for testing
 - fix: if attribute_view_gui returns empty string, invalid json is generated
 - decide if xsd file has public access or needs a function access to be displayed
 - build up std node template with at least all obj attributes and children (OK), plus create std template for all datatypes
