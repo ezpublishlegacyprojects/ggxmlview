@@ -15,5 +15,8 @@ AdditionalSiteDesignList[]=standard
 # A list of viewmodes which will be cached. We add xml and json to the default list
 # (unfortuantely this parameter is not an array but a string, so we cannot just append to it)
 #CachedViewModes=full;sitemap;pdf;search;xml;json
+# A list of view modes whise caches will always be cleared when publishing content
+# (unfortuantely this parameter is not an array but a string, so we cannot just append to it)
+#ComplexDisplayViewModes=sitemap;xml;json
 
 */ ?>
