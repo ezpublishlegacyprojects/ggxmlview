@@ -23,7 +23,7 @@ Installation
 ============
 Please read the INSTALL file for installation instructions.
 
-If uou are using custom datatypes in your website, you will need to
+If you are using custom datatypes in your website, you will need to
 - provide templates for their xml/json representation in content/datatype/view
 - modify the template for the xsd file: class/xml_classlist.tpl
 

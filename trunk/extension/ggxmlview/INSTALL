@@ -24,15 +24,20 @@ Installing the "XML View extension for eZ publish" extension
    To enable view cache, uncomment the appropriate lines in extension/ggxmlview/settings/site.ini.append.php
 7. the easiest way to have the xml and json views displayed using "nice urls" is
    to create url aliases that point to the system url of those views, eg:
-   /sitemap => /layout/set/xml/content/view/xml/2
+   /sitemapxml => /layout/set/xml/content/view/xmlmap/2
+   Pelase refer to the online eZ Publish documentation for details on creating url aliases.
+
 
 Testing that it works
 =====================
-Point your browser to http://ezpublish.install/index.php/layout/set/xml/content/view/xml/2
-or http://ezpublish.install/index.php/layout/set/json/content/view/json/2
-or http://ezpublish.install/index.php/xml/xsd
-(please not that the first 2 of these will take quite a long time to generate,
-you might want to test on a node that does not have a big subtree)
+Point your browser to http://my.ezpublish.site/siteaccess/index.php/layout/set/xml/content/view/xml/2
+or http://my.ezpublish.site/siteaccess/index.php/layout/set/json/content/view/json/2
+or http://my.ezpublish.site/siteaccess/index.php/xml/xsd
+or http://my.ezpublish.site/siteaccess/index.php/layout/set/xml/content/view/xmlmap/2
+or http://my.ezpublish.site/siteaccess/index.php/layout/set/json/content/view/jsonmap/2
+
+(please not that the last 2 of these will take quite a long time to generate,
+you might want to test on a node that does not have a big subtree of content)
 
 
 Troubleshooting

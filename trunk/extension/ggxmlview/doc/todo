@@ -1,6 +1,7 @@
-- add a apcakage with a couple of objects that contain all existing datatypes, one empty and one full, for testing
-- fix: if attribute_view_gui returns empty string, invalid json is generated
-- decide if xsd file has public access or needs a function access to be displayed
+- decide:
+    if xsd file has public access or needs a function access to be displayed
+    the exact list of node and object metadata that are part of templates
+- add a package with a couple of objects that contain all existing datatypes, one empty and one full, for testing
 - build up std node template with at least all obj attributes and children (OK), plus create std template for all datatypes
 - verify if the data encoded in json/xml is enough to be used in fromstring method for import in another instance
 - create xsd templates to be generated on class view (OK), finish definition of all datatypes
@@ -9,6 +10,6 @@
 - finish tpl operators to do xml washing (charset conversion?)
 - fix std debug class to handle echoing inside an xml comment instead of html or popup => to be done via kernel patching. Right now nothing guarantees that invalid xml is emitted and breaks the comment tags. Json comment tags can also be broken by a "*/" sequence...
 - find a way to have ez errors still routed in an xml page => creating an xml module + using setErrorModule inside (???) / propose it as an alternative in pagelayout module?
-- add hooks for xslt transform
+- add hooks for xslt transforms
 - ...
 - profit!

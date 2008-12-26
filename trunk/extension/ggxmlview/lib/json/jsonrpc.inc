@@ -6,7 +6,7 @@
  * http://www.json.org/
  * http://json-rpc.org/
  *
- * @version $Id: jsonrpc.inc,v 1.34 2008/03/07 16:47:32 ggiunta Exp $
+ * @version $Id: jsonrpc.inc,v 1.35 2008/04/05 21:32:01 ggiunta Exp $
  * @author Gaetano Giunta
  * @copyright (c) 2005-2008 G. Giunta
  * @license code licensed under the BSD License: http://phpxmlrpc.sourceforge.net/license.txt
@@ -144,7 +144,7 @@
 		//3 16 1110bbbb 10bbbbbb 10bbbbbb
 		else if ($ii>>4 == 14)
 		{
-			$b1 = ($ii & 31);
+			$b1 = ($ii & 15);
 			$ii = ord($data[$nn+1]);
 			$b2 = ($ii & 63);
 			$ii = ord($data[$nn+2]);
@@ -157,7 +157,7 @@
 		//4 21 11110bbb 10bbbbbb 10bbbbbb 10bbbbbb
 		else if ($ii>>3 == 30)
 		{
-			$b1 = ($ii & 31);
+			$b1 = ($ii & 7);
 			$ii = ord($data[$nn+1]);
 			$b2 = ($ii & 63);
 			$ii = ord($data[$nn+2]);

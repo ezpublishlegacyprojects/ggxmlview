@@ -1,21 +1,34 @@
 <xsd:schema
     xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-
+<!-- allow both xmlmap and xml views in one single definition -->
 <xsd:complexType name="eZPnode">
   <xsd:sequence>
     <xsd:element name="object" type="eZPobject"/>
-    <xsd:element name="children" minOccurs="0">
-      <xsd:complexType>
-        <xsd:sequence>
-          <xsd:element name="node" type="eZPnode" maxOccurs="unbounded"/>
-        </xsd:sequence>
-      </xsd:complexType>
-    </xsd:element>
+    <xsd:choice>
+      <xsd:element name="children">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="node" type="eZPnode" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="children_list">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="node" type="eZPlinenode" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:choice>
   </xsd:sequence>
   <xsd:attribute name="node_id" type="xsd:positiveInteger"/>
   <xsd:attribute name="parent_node_id" type="xsd:positiveInteger"/>
   <xsd:attribute name="depth" type="xsd:positiveInteger"/>
+</xsd:complexType>
+
+<xsd:complexType name="eZPlinenode">
+  <xsd:attribute name="node_id" type="xsd:positiveInteger"/>
 </xsd:complexType>
 
 <xsd:complexType name="eZPobject">

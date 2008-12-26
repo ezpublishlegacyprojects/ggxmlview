@@ -12,22 +12,15 @@
   "parent_node_id":{$node.parent_node_id},
   "main_node_id":{$node.main_node_id},
   "depth":{$node.depth},
-  "sort_field"="{$node.sort_field|washxml}"
-  "sort_order"="{$node.sort_order|washxml}",
-  "priority"={$node.priority},
-  "modified_subnode"={$node.modified_subnode},
-  "path_string"="{$node.path_string}",
-  "path_identification_string"="{$node.path_identification_string|washxml}",
-  "remote_id"="{$node.remote_id|washxml}",
-  "object":{content_view_gui view = json content_object = $node.object}
+  "object":{content_view_gui view = 'json' content_object = $node.object}
 
-  "children_list":[
+  "children":[
 {* @todo verify if using $node.children has same sort order, creates same compiled code *}
 {let children = fetch( 'content', 'list', hash( parent_node_id, $node.node_id, sort_by, $node.sort_array ) )}
 {foreach $children as $item}
-{node_view_gui view = 'jsonline' content_node = $item}{delimiter},{/delimiter}
+{* NB: full recursive view of all child nodes *}
+{node_view_gui view = 'jsonmap' content_node = $item}{delimiter},{/delimiter}
 {/foreach}
-
   ]
 
 {rdelim}
