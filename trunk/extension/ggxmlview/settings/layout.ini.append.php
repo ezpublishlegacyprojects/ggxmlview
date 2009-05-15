@@ -1,6 +1,5 @@
 <?php /*
 
-# set up a new pagelayout to be used by the layout module
 [xml]
 PageLayout=xml_pagelayout.tpl
 ContentType=text/xml

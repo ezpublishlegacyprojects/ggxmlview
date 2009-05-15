@@ -4,7 +4,7 @@
  *
  * @version $Id$
  * @author Gaetano Giunta
- * @copyright (c) 2008 G. Giunta
+ * @copyright (c) 2008,2009 G. Giunta
  * @license code licensed under the GPL License: see README
  */
 
@@ -13,7 +13,7 @@ class ggXmlTplOperators
 
     function operatorList()
     {
-        return array( 'washxml', 'washxmlcomment', 'washxmlcdata', 'httpcharset' );
+        return array( 'washxml', 'washxmlcomment', 'washxmlcdata', 'httpcharset', 'httpheader' );
     }
 
     function namedParameterPerOperator()
@@ -41,7 +41,12 @@ class ggXmlTplOperators
             case 'httpcharset':
             {
                 $operatorValue = eZTextCodec::httpCharset();
-            }
+            } break;
+            case 'httpheader':
+            {
+                header( $operatorValue );
+                $operatorValue = '';
+            } break;
         }
     }
 }

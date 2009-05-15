@@ -1,6 +1,5 @@
 <?php /*
 
-# we have to provide a new tpl operator for xml washing
 [TemplateSettings]
 ExtensionAutoloadPath[]=ggxmlview
 
@@ -11,7 +10,7 @@ ExtensionAutoloadPath[]=ggxmlview
 # A list of viewmodes which will be cached. We add xml and json to the default list
 # (unfortuantely this parameter is not an array but a string, so we cannot just append to it)
 #CachedViewModes=full;sitemap;pdf;search;xml;json;xmlmap;jsonmap
-# A list of view modes whise caches will always be cleared when publishing content
+# A list of view modes whose caches will always be cleared when publishing content
 # (unfortuantely this parameter is not an array but a string, so we cannot just append to it)
 #ComplexDisplayViewModes=sitemap;xmlmap;jsonmap
 
