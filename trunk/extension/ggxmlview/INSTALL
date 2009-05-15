@@ -67,9 +67,11 @@ Match[node]=XXX
    are many: the view cache will be used by default, it will be possible to use
    'nice' urls instead of urls that point to the node id, and it will be possible
    to have a siteaccess where the complete site is displayed in xml mode
-
+ . If you are using custom datatypes in your website, you will need to
+   - provide templates for their xml/json representation in content/datatype/view
+   - modify the template for the xsd file: class/xml_classlist.tpl
 
 Troubleshooting
 ===============
 
-For any problem or question, post on the extension forums on projects.ez.no
+For any problem or question, please post on the extension forums on projects.ez.no
