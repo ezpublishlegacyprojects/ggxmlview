@@ -12,6 +12,7 @@
 $classes = eZContentClass::fetchAllClasses();
 
 /// feed them to the template
+require_once( "kernel/common/template.php" );
 $tpl = templateInit();
 $tpl->setVariable( "classes", $classes );
 
