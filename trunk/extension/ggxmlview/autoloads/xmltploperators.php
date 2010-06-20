@@ -87,7 +87,7 @@ class ggXmlTplOperators
      * @param integer $depth max recursion depth
      * @param array $attributes a filter on object attributes / array keys to serialize
      */
-    static function to_array( $obj, $depth=2, $attributes=array() )
+    static function to_array( $obj, $depth=2, $attributes=array(), $with_typecast=true )
     {
         if ( ( is_object( $obj ) || is_array( $obj ) ) && $depth < 1 )
         {
@@ -98,11 +98,43 @@ class ggXmlTplOperators
         {
             // 'template object' (should be an ancestor of ezpo)
             $out = array();
+            if ( $with_typecast )
+            {
+                $fields = array();
+                if ( method_exists( $obj, "definition" ) )
+                {
+                    $def = $obj->definition();
+                    if ( isset( $def['fields'] ) )
+                    {
+                        $fields = $def['fields'];
+                    }
+                }
+            }
             foreach( $obj->attributes() as $key )
             {
                 if ( count( $attributes ) === 0 || in_array( $key, $attributes ) )
                 {
-                    $out[$key] = self::to_array( $obj->attribute( $key ), $depth-1 );
+                    $out[$key] = self::to_array( $obj->attribute( $key ), $depth-1, array(), $with_typecast );
+                    if ( $with_typecast && array_key_exists( $key, $fields ) && isset( $fields[$key]['datatype'] ) )
+                    {
+                        switch( $fields[$key]['datatype'] )
+                        {
+                            case 'string':
+                            case 'text':
+                                break;
+                            case 'int':
+                            case 'integer':
+                                $out[$key] = (integer)$out[$key];
+                                break;
+                            case 'float':
+                                $out[$key] = (float)$out[$key];
+                                break;
+                            case 'bool':
+                            case 'boolean':
+                                $out[$key] = (boolean)$out[$key];
+                                break;
+                        }
+                    }
                 }
             }
         }
@@ -113,7 +145,7 @@ class ggXmlTplOperators
             {
                 if ( count( $attributes ) === 0 || in_array( $key, $attributes ) )
                 {
-                    $out[$key] = self::to_array( $val, $depth-1 );
+                    $out[$key] = self::to_array( $val, $depth-1, array(), $with_typecast );
                 }
             }
         }
