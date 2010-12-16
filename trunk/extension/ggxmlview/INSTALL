@@ -18,7 +18,8 @@ Installing the "XML View extension for eZ publish" extension
 3. Unpack the files in the distribution.
 4. Enable the extension in eZ publish.
    Regenerate the extensions autoloads config if enabling the extensin by hand.
-
+5. Clean the template cache
+6. (optional) give some users access permission to the xml/xsd view
 
 Testing that it works
 =====================
