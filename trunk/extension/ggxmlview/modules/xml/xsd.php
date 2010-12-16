@@ -4,7 +4,7 @@
  *
  * @version $Id: $
  * @author Gaetano Giunta
- * @copyright (c) 2008,2009 G. Giunta
+ * @copyright (c) 2008,2010 G. Giunta
  * @license code licensed under the GPL License: see README
  */
 
@@ -20,6 +20,7 @@ $Result = array();
 $Result['pagelayout'] = 'xml_pagelayout.tpl';
 $Result['content'] = $tpl->fetch( "design:class/xml_classlist.tpl" );
 
-header('Content-type: text/xml');
+// this has been left to the template itself
+//header('Content-type: text/xml');
 
 ?>
